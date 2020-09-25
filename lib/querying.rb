@@ -1,9 +1,7 @@
 def select_books_titles_and_years_in_first_series_order_by_year
   "SELECT books.title, books.year
   FROM books
-  JOIN series
-  ON books.series_id = series.id
-  WHERE series.id = 1
+  WHERE books.series_id = 1
   ORDER BY books.year;"
 end
 
@@ -40,12 +38,10 @@ def select_series_title_with_most_human_characters
 end
 
 def select_character_names_and_number_of_books_they_are_in
-  "SELECT characters.name, COUNT(books.title)
+  "SELECT characters.name, COUNT(*) AS book_count
   FROM characters
-  INNER JOIN character_books
+  JOIN character_books
   ON characters.id = character_books.character_id
-  JOIN books
-  ON character_books.book_id = books.id
   GROUP BY characters.name 
-  ORDER BY COUNT(books.title) DESC, characters.name;"
+  ORDER BY book_count DESC, characters.name;"
 end
