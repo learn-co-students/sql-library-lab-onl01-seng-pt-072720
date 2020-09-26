@@ -50,8 +50,8 @@ Populate the database with the following:
 
 ## Section 3: `update.sql`
 
-Update the species of the last character in the database to "Martian" by writing
-an update statement in `update.sql`.
+<!-- Update the species of the last character in the database to "Martian" by writing
+an update statement in `update.sql`. -->
 
 ## Section 4: Querying your database
 
